@@ -101,7 +101,7 @@ while True:
     menu()
     choice = int(input())
 
-    #ADD SONG
+    # add song
     if choice == 1:
         songTitle = input('enter song title: ')
         songArtist = input('enter song artist: ')
@@ -109,7 +109,7 @@ while True:
         playlist.enqueue(new_song)
         print(f'successfully added: {songTitle} by {songArtist}')
 
-    #DELETE SONG
+    # delete song
     elif choice == 2:
         deleteTitle = input('Enter a Song Name to Delete: ')
         for i in range(playlist.size()):
@@ -121,19 +121,19 @@ while True:
         print("song removed rrom playlist \n") 
         print(playlist)
 
-    #PLAY
+    # play
     elif choice == 3:
         currentSong = playlist.peek()
         print(f"currently playing \n {currentSong}", end=" " '\n')
         print("playing...")  
     
-    #SKIP
+    # skip
     elif choice == 4:
         playlist.enqueue(playlist.dequeue())
         print("skip...")
         print('current track: ', playlist.peek())
     
-    #GO BACK
+    # GO BACK!
     elif choice == 5:
         temp_stack = Stack()
         while not playlist.isEmpty():
@@ -160,7 +160,7 @@ while True:
         # print("Replaying....")
         # print(playlist.peek())
 
-    #SHUFFLE
+    # do the shuffle!
     elif choice == 6:
         for i in range(10):
             removeSong = random.randint(0, playlist.size())
@@ -176,7 +176,7 @@ while True:
         currentSong = playlist.peek()
         print(f"currently playing \n {currentSong}", end=" " '\n')
 
-    #PLAYLIST ORDER    
+    # the playlist order   
     elif choice == 8:
         print(playlist)
     elif choice == 0:
